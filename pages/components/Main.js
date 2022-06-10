@@ -1,13 +1,29 @@
+import { useState } from "react" ;
 
-function Main ({questionAskHandler}) {
+
+function Main () {
     
+    const [data ,setQuestion] =useState()
+    function placeHolder (e) {
+        e.preventDefault();
+        
+        const question ={
+        location :e.target.location.value,
+        minCustomers :e.target.minimum.value,
+        maxCustomers :e.target.maximum.value,
+        avgCookies :e.target.avg.value,
+
+        }
+        setQuestion(question);
+        
+    }
 
     return (
         
         
         <div className="grid grid-cols-1  justify-items-center  ">
         
-        <form onSubmit = {questionAskHandler} className="p-5 bg-[#6ee7b7] font-bold w-3/4 m-6 grid gap-3 md:grid-cols-1  rounded shadow-lg justify-center ">
+        <form onSubmit = {placeHolder} className="p-5 bg-[#6ee7b7] font-bold w-3/4 m-6 grid gap-3 md:grid-cols-1  rounded shadow-lg justify-center ">
             
             <h2 className="text-4xl text-white font-[poppins] text-center" > Create Cookie Stand </h2>
             <div className="items-start">
@@ -39,12 +55,18 @@ function Main ({questionAskHandler}) {
              </div>
              <br/>
         </form>
-        
+        <div className="font-[poppins] text-center">
+        <p>Report Table Coming Soon...</p>
+        <br/>
+        <p >{JSON.stringify(data)}</p>
+        </div>
+            
         </div>
         
     
     )
 }
+
 
 
 export default Main
