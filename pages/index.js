@@ -2,11 +2,15 @@
 import Header from "./components/Header" ;
 import Main from "./components/Main" ;
 import Footer from "./components/Footer";
-import Head from "next/head";
+import Head from "next/head" ;
 
 
 function Home () 
 {
+  
+  
+
+  
   return (
     <>
     <Head>
@@ -16,7 +20,9 @@ function Home ()
     <Header/>
     
     
-    <Main/>
+    <Main   />
+    
+    
     <Footer/>
 
 
